@@ -13,7 +13,7 @@ DWORD WINAPI ClientThread(LPVOID lpParameter)
     errno_t error;
     struct stat sb;
 
-    const char* filename = "C:\\Users\\Antoine\\source\\repos\\RunShellcode\\merlin1705";
+    const char* filename = ".\\enc_shphnd_1306.bin";
 
 
     error = fopen_s(&in_file, filename, "rb");

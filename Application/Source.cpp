@@ -5,8 +5,12 @@
 #include <WinUser.h>
 #include <iostream>
 
-
-
+/* 
+Currently application is in "console mode".
+If "application mode" is needed (to hide the console) on both project right click : properties -> Linker -> System -> Subsystem
+and uncomment the window below
+*/
+/*
 HWND GetConsoleHwnd(void)
 {
     HWND hwndFound;
@@ -16,17 +20,17 @@ HWND GetConsoleHwnd(void)
     SetConsoleTitle(L"some");
     return(hwndFound);
 }
-
+*/
 int main()
 {
     HMODULE myDLL;
-    HWND hConsole;
+    //HWND hConsole;
     myDLL = LoadLibrary(L".\\DLL.dll");
     if (!myDLL)
         std::cout << "LoadLibrary Failed ";
     printf("I live forever\n");
-    hConsole = GetConsoleHwnd();
-    ShowWindow(hConsole, SW_HIDE);
+   // hConsole = GetConsoleHwnd();
+   // ShowWindow(hConsole, SW_HIDE);
     while (1) {
         // infinite loop to keep thread alive.
     }
